@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  dokuwiki:
+    image: 'bitnami/dokuwiki:latest'
+    ports:
+      - '80:80'
+    volumes:
+      - 'dokuwiki_data:/bitnami'
+volumes:
+  dokuwiki_data:
+    driver: local
