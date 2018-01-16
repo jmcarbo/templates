@@ -746,5 +746,25 @@
         "description": "Password used by the MySQL root user."
       }
     ]
+  },
+  {
+    "type": "stack",
+    "title": "Resilio Sync",
+    "description": "Deploys Resilio Sync",
+    "note": "Deploys Resilio Sync.",
+    "categories": ["Utilities"],
+    "platform": "linux",
+    "logo": "https://www.resilio.com/img/logo.svg",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/rslsync/rslsync.yml"
+    },
+    "env": [
+      {
+        "name": "MY_SECRET",
+        "label": "Resilio secret",
+        "description": "Resilio secret."
+      }
+    ]
   }
 ]

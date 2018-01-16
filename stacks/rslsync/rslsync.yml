@@ -1,0 +1,20 @@
+version: '3.4'
+services:
+  create:
+    image: ubuntu
+    command: bash -c 'mkdir -p /data/data'
+    volumes:
+      - /:/data
+    deploy:
+      mode: global
+      restart_policy:
+        condition: none
+  rslsync:
+    image: jmcarbo/rslsync
+    environment:
+      - MY_SECRET=AQ2COEOKTIHHGPMTSBRZNTKZFJFGFMCB2
+    volumes:
+      - /data:/data
+    deploy:
+      mode: global
+      endpoint_mode: dnsrr
