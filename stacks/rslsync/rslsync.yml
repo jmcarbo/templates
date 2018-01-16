@@ -12,7 +12,7 @@ services:
   rslsync:
     image: jmcarbo/rslsync
     environment:
-      - MY_SECRET=AQ2COEOKTIHHGPMTSBRZNTKZFJFGFMCB2
+      - MY_SECRET=${MY_SECRET:-AQ2COEOKTIHHGPMTSBRZNTKZFJFGFMCB2}
     volumes:
       - /data:/data
     deploy:

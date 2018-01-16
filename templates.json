@@ -751,7 +751,7 @@
     "type": "stack",
     "title": "Resilio Sync",
     "description": "Deploys Resilio Sync",
-    "note": "Deploys Resilio Sync.",
+    "note": "Deploys Resilio Sync. Default MY_SECRET is AQ2COEOKTIHHGPMTSBRZNTKZFJFGFMCB2",
     "categories": ["Utilities"],
     "platform": "linux",
     "logo": "https://www.resilio.com/img/logo.svg",
