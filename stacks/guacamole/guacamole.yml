@@ -42,4 +42,4 @@ volumes:
 
 networks:
   guac:
-    driver: bridge
+    driver: overlay
