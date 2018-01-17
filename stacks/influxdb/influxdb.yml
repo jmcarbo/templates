@@ -125,4 +125,4 @@ volumes:
   chronograf-data:
   kapacitor-data:
   influxdb-data:
-  graphana-data
+  graphana-data:
