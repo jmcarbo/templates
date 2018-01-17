@@ -1,38 +1,48 @@
 version: '3.4'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.1
-    container_name: elasticsearch
+    image: bitnami/elasticsearch:latest
     environment:
-      - ELASTIC_PASSWORD=MagicWord
-      - cluster.name=docker-cluster
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - network.host=0.0.0.0
+      - ELASTICSEARCH_CLUSTER_NAME=elasticsearch-cluster
+      - ELASTICSEARCH_CLUSTER_HOSTS=elasticsearch,elasticsearch2
+      - ELASTICSEARCH_NODE_NAME=elastic-node1
+      #- ELASTIC_PASSWORD=MagicWord
+      #- cluster.name=docker-cluster
+      #- "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      #- network.host=0.0.0.0
+    #image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.1
+    container_name: elasticsearch
     ulimits:
       memlock:
         soft: -1
         hard: -1
     volumes:
-      - esdata1:/usr/share/elasticsearch/data
+      - esdata1:/bitnami/elasticsearch
+    #  - esdata1:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
       - esnet
   elasticsearch2:
-    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.1
+    image: bitnami/elasticsearch:latest
+    #image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.1
     container_name: elasticsearch2
     environment:
-      - ELASTIC_PASSWORD=MagicWord    
-      - cluster.name=docker-cluster
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - "discovery.zen.ping.unicast.hosts=elasticsearch"
-      - network.host=0.0.0.0
+      - ELASTICSEARCH_CLUSTER_NAME=elasticsearch-cluster
+      - ELASTICSEARCH_CLUSTER_HOSTS=elasticsearch,elasticsearch2
+      - ELASTICSEARCH_NODE_NAME=elastic-node2
+      #- ELASTIC_PASSWORD=MagicWord    
+      #- cluster.name=docker-cluster
+      #- "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      #- "discovery.zen.ping.unicast.hosts=elasticsearch"
+      #- network.host=0.0.0.0
     ulimits:
       memlock:
         soft: -1
         hard: -1
     volumes:
-      - esdata2:/usr/share/elasticsearch/data
+      - esdata1:/bitnami/elasticsearch
+      #- esdata2:/usr/share/elasticsearch/data
     networks:
       - esnet
   kibana:
