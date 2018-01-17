@@ -738,14 +738,7 @@
     "repository": {
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/dokuwiki/docker-stack.yml"
-    },
-    "env": [
-      {
-        "name": "MYSQL_ROOT_PASSWORD",
-        "label": "Database root password",
-        "description": "Password used by the MySQL root user."
-      }
-    ]
+    }
   },
   {
     "type": "stack",
