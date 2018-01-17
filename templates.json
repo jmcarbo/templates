@@ -799,7 +799,7 @@
       {
         "name": "EXTRA_PARAMS",
         "label": "EXTRA_PARAMS",
-        "description": "EX: --count=100000 --batch_size=1000 --index_name=blabla"
+        "description": "EX: --count=100000 --batch_size=1000 --index_name=blabla --format=<<field_name>>:<<field_type>,..."
       }
     ]
   },
