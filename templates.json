@@ -781,6 +781,24 @@
   },
   {
     "type": "stack",
+    "title": "Elasticsearch fake data inject",
+    "description": "Deploys Elasticsearch fake data inject",
+    "categories": ["Database"],
+    "platform": "linux",
+    "logo": "https://www.elastic.co/assets/blt6050efb80ceabd47/elastic-logo%20(2).svg",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/elasticfake/elasticfake.yml"
+    },
+    "env": [
+      {
+        "name": "ELASTIC_URL",
+        "label": "ELASTIC_URL",
+        "description": "ELASTIC_URL"
+      }
+  },
+  {
+    "type": "stack",
     "title": "Influxdb",
     "description": "Deploys Influxdb",
     "categories": ["Database"],
