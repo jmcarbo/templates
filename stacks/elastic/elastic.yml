@@ -13,6 +13,10 @@ services:
     #image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.1
     container_name: elasticsearch
     ulimits:
+      nproc: -1
+      nofile:
+        soft: -1
+        hard: -1
       memlock:
         soft: -1
         hard: -1
@@ -37,6 +41,10 @@ services:
       #- "discovery.zen.ping.unicast.hosts=elasticsearch"
       #- network.host=0.0.0.0
     ulimits:
+      nproc: -1
+      nofile:
+        soft: -1
+        hard: -1
       memlock:
         soft: -1
         hard: -1
