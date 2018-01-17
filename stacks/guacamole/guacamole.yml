@@ -5,7 +5,7 @@ services:
     image: postgres
     restart: always
     volumes:
-      #- ./init:/docker-entrypoint-initdb.d
+      - ./init:/docker-entrypoint-initdb.d
       - data:/var/lib/postgres/data
     environment:
       POSTGRES_USER: guacamole_user
