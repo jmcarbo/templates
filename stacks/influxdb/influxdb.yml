@@ -88,6 +88,20 @@ services:
         [[outputs.influxdb]]
           urls = ["http://influxdb:8086"]
           database = "telegraf"
+        [[inputs.kernel]]
+        [[inputs.mem]]
+        [[inputs.processes]]
+        [[inputs.swap]]
+        [[inputs.system]]
+        [[inputs.cpu]]
+          percpu = true
+          totalcpu = true
+          collect_cpu_time = false
+          report_active = false
+        [[inputs.disk]]
+          ignore_fs = ["tmpfs", "devtmpfs", "devfs"]
+        [[inputs.diskio]]
+        [[inputs.docker]]
 
     volumes:
       # Mount for telegraf configuration
