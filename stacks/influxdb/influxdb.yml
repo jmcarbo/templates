@@ -30,7 +30,6 @@ services:
       GF_INSTALL_PLUGINS: grafana-clock-panel,briangann-gauge-panel,natel-plotly-panel,grafana-simple-json-datasource
     networks:
       - influx
-      - apps
     volumes:
       - graphana-data:/var/lib/grafana
     depends_on:
@@ -118,8 +117,6 @@ networks:
     ipam:
       config:
         - subnet: 192.168.101.0/24
-  apps:
-    external: true
 
 volumes:
   chronograf-data:
