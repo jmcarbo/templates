@@ -52,7 +52,13 @@ services:
     depends_on:
       - postgres
       - guacd
-    
+  darktable:
+    image: jmcarbo/darktable
+    environment:
+      - USER_PASSWORD=apassword
+    networks:
+      - guac
+ 
 volumes:
   data:
     driver: local
