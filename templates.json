@@ -821,6 +821,17 @@
   },
   {
     "type": "stack",
+    "title": "Rstudio",
+    "description": "Deploys Rstudio",
+    "categories": ["Science"],
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/rstudio/rstudio.yml"
+    }
+  },
+  {
+    "type": "stack",
     "title": "Minio",
     "description": "Deploys Minio",
     "categories": ["Databases"],
