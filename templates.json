@@ -796,6 +796,7 @@
         "label": "ELASTIC_URL",
         "description": "ELASTIC_URL"
       }
+    ]
   },
   {
     "type": "stack",
