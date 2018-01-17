@@ -818,6 +818,31 @@
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/guacamole/guacamole.yml"
     }
+  },
+  {
+    "type": "stack",
+    "title": "Minio",
+    "description": "Deploys Minio",
+    "categories": ["Databases"],
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/minio/minio.yml"
+    },
+    "env": [
+      {
+        "name": "MINIO_ACCESS_KEY",
+        "label": "MINIO_ACCESS_KEY",
+        "description": "MINIO_ACCESS_KEY"
+      },
+      {
+        "name": "MINIO_SECRET_KEY",
+        "label": "MINIO_SECRET_KEY",
+        "description": "MINIO_SECRET_KEY"
+      }
+    ]
+
   }
+
 
 ]
