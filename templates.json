@@ -810,5 +810,4 @@
       "stackfile": "stacks/influxdb/influxdb.yml"
     }
   }
-
 ]
