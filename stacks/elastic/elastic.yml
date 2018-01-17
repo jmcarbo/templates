@@ -4,8 +4,8 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.1
     environment:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      #- network.host=0.0.0.0
-      - network.host=_eth0_
+      - network.host=0.0.0.0
+      #- network.host=_eth0_
       - cluster.name=elastic-cluster
     ulimits:
       nproc: -1
@@ -31,8 +31,8 @@ services:
       - cluster.name=elastic-cluster
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - "discovery.zen.ping.unicast.hosts=elasticsearch"
-      - network.host=_eth0_
-      #- network.host=0.0.0.0
+      #- network.host=_eth0_
+      - network.host=0.0.0.0
     ulimits:
       nproc: -1
       nofile:
