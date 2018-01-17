@@ -4,7 +4,6 @@ services:
   postgres:
     image: postgres
     restart: always
-    command: /bin/bash -c 'apt-get update && apt-get install -y curl && curl https://gist.githubusercontent.com/jmcarbo/ecda91233c6d4e94b4b963949cf759dd/raw/b70928f9cd1d22875c06b6a77075c1ce249bc707/guacamole.sql | psql -U guacamole_user guacamole_db && postgres'
     volumes:
       #- ./init:/docker-entrypoint-initdb.d
       - data:/var/lib/postgres/data
@@ -12,8 +11,21 @@ services:
       POSTGRES_USER: guacamole_user
       POSTGRES_PASSWORD: some_password
       POSTGRES_DB: guacamole_db
+    networks:
+      - guac
+  postgresinit:
+    image: postgres
+    command: /bin/bash -c 'apt-get update && apt-get install -y curl && curl https://gist.githubusercontent.com/jmcarbo/ecda91233c6d4e94b4b963949cf759dd/raw/b70928f9cd1d22875c06b6a77075c1ce249bc707/guacamole.sql | psql -h postgres -U guacamole_user guacamole_db'
+    environment:
+      POSTGRES_USER: guacamole_user
+      POSTGRES_PASSWORD: some_password
+      POSTGRES_DB: guacamole_db
       PGPASSWORD: some_password
-
+    deploy:
+      restart_policy:
+        condition: none
+    depends_on:
+      - postgres
     networks:
       - guac
   guacd:
