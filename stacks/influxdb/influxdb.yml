@@ -80,8 +80,15 @@ services:
       mode: global
       restart_policy:
         condition: on-failure
+    entrypoint: /bin/bash -c 'echo "$$TELEGRAF_CONFIG" | tee /etc/telegraf/telegraf.conf && telegraf'
     #hostname: "{{.Node.Hostname}}-{{.Node.ID}}-{{.Service.Name}}"
     hostname: "{{.Node.Hostname}}"
+    environment:
+      TELEGRAF_CONFIG: |-
+        [[outputs.influxdb]]
+          urls = ["http://influxdb:8086"]
+          database = "telegraf"
+
     volumes:
       # Mount for telegraf configuration
       #- /data/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
