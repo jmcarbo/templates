@@ -8,7 +8,7 @@ services:
         #!/bin/bash
         pip install tornado
         curl https://raw.githubusercontent.com/oliver006/elasticsearch-test-data/master/es_test_data.py > es_test_data.py
-        python es_test_data.py --es_url=${ELASTIC_URL:-http://localhost:9200}
+        python es_test_data.py --es_url=${ELASTIC_URL:-http://localhost:9200} ${EXTRA_PARAMS}
     deploy:
       restart_policy:
         condition: none

@@ -795,6 +795,11 @@
         "name": "ELASTIC_URL",
         "label": "ELASTIC_URL",
         "description": "ELASTIC_URL"
+      },
+      {
+        "name": "EXTRA_PARAMS",
+        "label": "EXTRA_PARAMS",
+        "description": "EX: --count=100000 --batch_size=1000 --index_name=blabla"
       }
     ]
   },
