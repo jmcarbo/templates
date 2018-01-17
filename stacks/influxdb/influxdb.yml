@@ -28,6 +28,9 @@ services:
     #container_name: grafana
     environment:
       GF_INSTALL_PLUGINS: grafana-clock-panel,briangann-gauge-panel,natel-plotly-panel,grafana-simple-json-datasource
+    ports:
+      # The WebUI for Chronograf is served on port 8888
+      - "3000:3000"
     networks:
       - influx
     volumes:
