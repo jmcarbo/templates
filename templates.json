@@ -807,5 +807,17 @@
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/influxdb/influxdb.yml"
     }
+  },
+  {
+    "type": "stack",
+    "title": "Guacamole",
+    "description": "Deploys Guacamole",
+    "categories": ["Utilities"],
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/guacamole/guacamole.yml"
+    }
   }
+
 ]
