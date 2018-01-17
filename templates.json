@@ -778,5 +778,18 @@
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/elastic/elastic.yml"
     }
+  },
+  {
+    "type": "stack",
+    "title": "Influxdb",
+    "description": "Deploys Influxdb",
+    "categories": ["Database"],
+    "platform": "linux",
+    "logo": "https://www.influxdata.com/wp-content/themes/influxdata3/images/influx-regular-white.svg",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/influxdb/influxdb.yml"
+    }
   }
+
 ]
