@@ -898,7 +898,19 @@
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/odoo/odoo.yml"
     }
+  },
+  {
+    "type": "stack",
+    "title": "traefik",
+    "description": "Deploys traefik",
+    "categories": ["System"],
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/traefik/traefik.yml"
+    }
   }
+
 
 
 
