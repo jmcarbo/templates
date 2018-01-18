@@ -1,0 +1,18 @@
+version: '3.4'
+services:
+  cloud9:
+    image: sapk/cloud9 
+    command: --auth username:passw
+    ports:
+      - "8081:8081"
+    volumes:
+      - cloud9:/workspace
+    networks:
+      - cloud9
+
+volumes:
+  cloud9:
+
+networks:
+  cloud9:
+    driver: overlay

@@ -853,7 +853,17 @@
       }
     ]
 
+  },
+  {
+    "type": "stack",
+    "title": "Cloud9",
+    "description": "Deploys Cloud9",
+    "categories": ["Development"],
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/cloud9/cloud9.yml"
+    }
   }
-
 
 ]
