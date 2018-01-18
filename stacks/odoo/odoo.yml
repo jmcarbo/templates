@@ -10,6 +10,8 @@ services:
       - "POSTGRES_USER=odoo"
       - "POSTGRES_PASSWORD=odoo"
       #- "DB_PORT_5432_TCP_ADDR=gestiofinsdb"
+    ports:
+      - "8069:8069"
     volumes:
       - odoofiles:/var/lib/odoo
       - odooaddons:/mnt/extra-addons
