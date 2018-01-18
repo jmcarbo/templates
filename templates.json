@@ -876,6 +876,18 @@
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/cloud9/cloud9.yml"
     }
+  },
+  {
+    "type": "stack",
+    "title": "Tuleap",
+    "description": "Deploys Tuleap",
+    "categories": ["Development"],
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/tuleap/tuleap.yml"
+    }
   }
+
 
 ]
