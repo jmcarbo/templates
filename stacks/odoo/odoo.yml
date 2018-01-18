@@ -1,0 +1,32 @@
+version: '3.4'
+services:
+  odoo:
+    image: odoo:11
+    #command: -c /etc/odoo/openerp-server.conf -u odoo -w odoo  -d voluntarios
+    #command: --load=web,web_kanban,base_session_store_psql
+    #entrypoint: bash -c "apt-get update; apt-get install -y build-essential libldap2-dev libsasl2-dev python3-dev; pip3 install wheel; pip3 install pyldap; /entrypoint.sh odoo"
+    environment:
+      - "DB_PORT_5432_TCP_ADDR=odoodb"
+      - "POSTGRES_USER=odoo"
+      - "POSTGRES_PASSWORD=odoo"
+      #- "DB_PORT_5432_TCP_ADDR=gestiofinsdb"
+    volumes:
+      - odoofiles:/var/lib/odoo
+      - odooaddons:/mnt/extra-addons
+
+  odoodb:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoodb:/var/lib/postgresql/data/pgdata
+
+volumes:
+  odoodb:
+    driver: local
+  odoofiles:
+    driver: local
+  odooaddons:
+    driver: local
