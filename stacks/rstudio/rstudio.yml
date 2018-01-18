@@ -10,7 +10,7 @@ services:
     deploy:
       labels:
         - traefik.port=8787
-        - traefik.frontend.rule=PathPrefixStrip:/${TRAEFIK_PREFIX:-rstudio}/
+        - traefik.frontend.rule=PathPrefix:/${TRAEFIK_PREFIX:-rstudio}/
 
 networks:
   traefik_traefik:
