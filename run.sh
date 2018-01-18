@@ -1,0 +1,1 @@
+docker run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock -p 8000:8000 -p 4442:4442 traefik:1.5-alpine traefik --docker.swarmmode --defaultEntryPoints='http,https' --entryPoints='Name:http Address::8000 Redirect.EntryPoint:https' --entryPoints='Name:https Address::4442 TLS'

@@ -2,7 +2,10 @@ version: '3.4'
 services:
   traefik:
     image: traefik:1.5-alpine
-    command: --docker.swarmmode
+    command: --docker.swarmmode --defaultEntryPoints='http,https' --entryPoints='Name:http Address::8000 Redirect.EntryPoint:https' --entryPoints='Name:https Address::4442 TLS'
+    ports:
+      - "8000:8000"
+      - "4442:4442"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
