@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  caddya:
+    image: abiosoft/caddy
+    networks:
+      - traefik_traefik
+    deploy:
+      labels:
+        - traefik.port=2015
+        - traefik.frontend.rule=PathPrefixStrip:/caddy/
+
+networks:
+  traefik_traefik:
+    external: true 
