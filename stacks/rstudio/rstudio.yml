@@ -2,9 +2,17 @@ version: '3.4'
 services:
   rstudio:
     image: rocker/rstudio 
-    ports:
-      - "8787:8787"
     environment:
-      - USER=user1
-      - PASSWORD=apassword 
+      - USER=${USER:-user}
+      - PASSWORD=${PASSWORD:-password}
+    networks:
+      - traefik_traefik
+    deploy:
+      labels:
+        - traefik.port=8787
+        - traefik.frontend.rule=PathPrefixStrip:/${TRAEFIK_PREFIX:-rstudio}/
+
+networks:
+  traefik_traefik:
+    external: true 
 

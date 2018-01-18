@@ -840,7 +840,25 @@
     "repository": {
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/rstudio/rstudio.yml"
-    }
+    },
+    "env": [
+      {
+        "name": "USER",
+        "label": "User",
+        "description": "User"
+      },
+      {
+        "name": "PASSWORD",
+        "label": "Password",
+        "description": "Password"
+      },
+      {
+        "name": "TRAEFIK_PREFIX",
+        "label": "Traefik prefix",
+        "description": "Traefik prefix"
+      }
+    ]
+
   },
   {
     "type": "stack",
