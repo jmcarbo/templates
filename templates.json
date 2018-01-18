@@ -774,6 +774,18 @@
   },
   {
     "type": "stack",
+    "title": "Elasticsearch single node",
+    "description": "Deploys Elasticsearch single node",
+    "categories": ["Database"],
+    "platform": "linux",
+    "logo": "https://www.elastic.co/assets/blt6050efb80ceabd47/elastic-logo%20(2).svg",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/elasticsingle/elasticsingle.yml"
+    }
+  },
+  {
+    "type": "stack",
     "title": "Elasticsearch fake data inject",
     "description": "Deploys Elasticsearch fake data inject",
     "categories": ["Database"],

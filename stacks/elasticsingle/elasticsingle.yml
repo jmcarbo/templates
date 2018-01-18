@@ -1,0 +1,47 @@
+version: '3.4'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.1
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - network.host=0.0.0.0
+      #- network.host=_eth0_
+      - cluster.name=elastic-cluster
+    ulimits:
+      nproc: -1
+      nofile:
+        soft: -1
+        hard: -1
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+    deploy:
+      mode: replicated
+      replicas: 1
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:6.1.1
+    environment:
+      SERVER_NAME: kibana.example.org
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    ports:
+      - 5601:5601
+    networks:
+      - esnet
+    depends_on:
+      - elasticsearch
+      
+networks:
+  esnet:
+    driver: overlay
+    
+volumes:
+  esdata1:
+    driver: local
+  esdata2:
+    driver: local
