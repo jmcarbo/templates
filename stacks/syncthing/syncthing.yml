@@ -14,7 +14,7 @@ services:
       - '22000:22000'
     deploy:
       mode: global
-      endpoint_mode: dnsrr
+      #endpoint_mode: dnsrr
 volumes:
   syncthing:
     driver: local
