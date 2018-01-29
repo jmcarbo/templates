@@ -11,10 +11,14 @@ services:
       - USE_RELAY_SERVER=false
       - SEARCH_LAN=true
     volumes:
-      - /data:/data
+      - btsync-data:/data
     networks:
       - btsync
     deploy:
       mode: global
+volumes:
+  btsync-data:
+    driver: local
 networks:
   btsync:
+    driver: overlay
