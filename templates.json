@@ -959,7 +959,15 @@
     "repository": {
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/syncthing/syncthing.yml"
-    }
+    },
+    "env": [
+      {
+        "name": "BTSYNC_SCRET",
+        "label": "BTSYNC_SECRET",
+        "description": "BTSYNC_SECRET"
+      }
+    ]
   }
+
 
 ]
