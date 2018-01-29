@@ -5,12 +5,23 @@ services:
     volumes:
       - syncthing:/var/syncthing/config
       - syncthing-data:/root/data
+    hostname: "{{.Node.Hostname}}-syncthing"
     user: root
     networks:
       - hostnet
+    ports:
+      - '8384:8384'
+      - '22000:22000'
     deploy:
       mode: global
+      endpoint_mode: dnsrr
+volumes:
+  syncthing:
+    driver: local
+  syncthing-data:
+    driver: local
 networks:
   hostnet:
-    external:
-      name: host
+    driver: overlay
+    #external:
+    #  name: host
