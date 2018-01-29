@@ -1,0 +1,20 @@
+version: '3.2'
+services:
+  btsync:
+    image: jmcarbo/btsync
+    command: ${BTSYNC_SECRET:-A7XEM3NBF3CBWDCH5TM2QNDOXZI3JOIJQ}
+    environment:
+      #- KNOWN_HOSTS=[ "btsync:55555" ]
+      - DATA_DIR=/data
+      - USE_TRACKER=true
+      - USE_DHT=false
+      - USE_RELAY_SERVER=false
+      - SEARCH_LAN=true
+    volumes:
+      - /data:/data
+    networks:
+      - btsync
+    deploy:
+      mode: global
+networks:
+  btsync:

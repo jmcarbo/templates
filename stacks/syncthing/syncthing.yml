@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  syncthing:
+    image: syncthing/syncthing
+    volumes:
+      - syncthing:/var/syncthing/config
+      - syncthing-data:/root/data
+    user: root
+    networks:
+      - hostnet
+    deploy:
+      mode: global
+networks:
+  hostnet:
+    external:
+      name: host
