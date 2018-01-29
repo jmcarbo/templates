@@ -7,6 +7,8 @@ services:
       - PASSWORD=${PASSWORD:-password}
     networks:
       - traefik_traefik
+    ports:
+      - '8787:8787'
     deploy:
       labels:
         - traefik.port=8787

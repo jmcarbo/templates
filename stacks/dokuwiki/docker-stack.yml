@@ -3,9 +3,15 @@ services:
   dokuwiki:
     image: 'bitnami/dokuwiki:latest'
     ports:
-      - '80:80'
+      - '9087:80'
     volumes:
       - 'dokuwiki_data:/bitnami'
+    environment:
+      - DOKUWIKI_USERNAME=admin
+      - DOKUWIKI_PASSWORD=admin
+      - DOKUWIKI_FULL_NAME=Administrator
+      - DOKUWIKI_EMAIL=administrator@example.com
+      - DOKUWIKI_WIKI_NAME=wiki
 volumes:
   dokuwiki_data:
     driver: local
