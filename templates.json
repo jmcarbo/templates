@@ -948,17 +948,6 @@
     "repository": {
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/btsync/btsync.yml"
-    }
-  },
-  {
-    "type": "stack",
-    "title": "syncthing",
-    "description": "Deploys syncthing",
-    "categories": ["System"],
-    "platform": "linux",
-    "repository": {
-      "url": "https://github.com/jmcarbo/templates",
-      "stackfile": "stacks/syncthing/syncthing.yml"
     },
     "env": [
       {
@@ -972,6 +961,17 @@
         "description": "BTSYNC_VOLUME"
       }
     ]
+  },
+  {
+    "type": "stack",
+    "title": "syncthing",
+    "description": "Deploys syncthing",
+    "categories": ["System"],
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/syncthing/syncthing.yml"
+    }
   }
 
 
