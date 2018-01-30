@@ -11,13 +11,15 @@ services:
       - USE_RELAY_SERVER=false
       - SEARCH_LAN=true
     volumes:
-      - ${BTSYNC_VOLUME:-btsync-data}:/data
+      - btsync-data:/data
     networks:
       - btsync
     deploy:
       mode: global
 volumes:
-  ${BTSYNC_VOLUME:-btsync-data}:
+  btsync-data:
+    external:
+      name: '${BTSYNC_VOLUME:-btsync-data}'
     driver: local
 networks:
   btsync:
