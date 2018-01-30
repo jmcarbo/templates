@@ -10,7 +10,7 @@ services:
       - USE_DHT=false
       - USE_RELAY_SERVER=false
       - SEARCH_LAN=true
-    volumes:${BTSYNC_VOLUME:-btsync-data}
+    volumes:
       - ${BTSYNC_VOLUME:-btsync-data}:/data
     networks:
       - btsync
