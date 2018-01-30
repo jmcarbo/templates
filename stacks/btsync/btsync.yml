@@ -15,6 +15,8 @@ services:
       - btsync-data:/data
     networks:
       - btsync
+    secrets:
+      - btsync_secret
     deploy:
       mode: global
 volumes:
@@ -24,3 +26,7 @@ volumes:
 networks:
   btsync:
     driver: overlay
+secrets:
+  btsync_secret:
+    external:
+      name: ${BTSYNC_SECRET:-btsync_secret}
