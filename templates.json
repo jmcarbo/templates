@@ -959,6 +959,11 @@
         "name": "BTSYNC_VOLUME",
         "label": "BTSYNC_VOLUME",
         "description": "BTSYNC_VOLUME"
+      },
+      {
+        "name": "BTSYNC_USER",
+        "label": "BTSYNC_USER",
+        "description": "BTSYNC_USER=root"
       }
     ]
   },

@@ -10,6 +10,7 @@ services:
       - USE_DHT=false
       - USE_RELAY_SERVER=false
       - SEARCH_LAN=true
+    user: ${BTSYNC_USER:-root}
     volumes:
       - btsync-data:/data
     networks:
