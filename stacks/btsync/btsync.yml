@@ -20,7 +20,6 @@ volumes:
   btsync-data:
     external:
       name: '${BTSYNC_VOLUME:-btsync-data}'
-    driver: local
 networks:
   btsync:
     driver: overlay
