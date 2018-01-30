@@ -962,9 +962,14 @@
     },
     "env": [
       {
-        "name": "BTSYNC_SCRET",
+        "name": "BTSYNC_SECRET",
         "label": "BTSYNC_SECRET",
         "description": "BTSYNC_SECRET"
+      },
+      {
+        "name": "BTSYNC_VOLUME",
+        "label": "BTSYNC_VOLUME",
+        "description": "BTSYNC_VOLUME"
       }
     ]
   }
