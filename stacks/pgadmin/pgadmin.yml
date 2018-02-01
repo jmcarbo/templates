@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   pgadmin:
-    image: englc/pgadmin4
+    image: fenglc/pgadmin4
     ports:
       - "5050:5050"
     environment:
