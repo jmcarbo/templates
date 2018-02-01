@@ -1,14 +1,14 @@
 version: '3.4'
 services:
   pgadmin:
-    image: chorss/docker-pgadmin4
+    image: fenglc/pgadmin4
     ports:
       - "5050:5050"
     environment:
-      - PGADMIN_SETUP_EMAIL=${DEFAULT_USER:-pgadmin4@pgadmin.org}
-      - PGADMIN_SETUP_PASSWORD=${DEFAULT_PASSWORD:-admin}
+      - DEFAULT_USER=${DEFAULT_USER:-pgadmin4@pgadmin.org}
+      - DEFAULT_PASSWORD=${DEFAULT_PASSWORD:-admin}
     volumes:
-      - pgadmin:/data
+      - pgadmin:/var/lib/pgadmin4
     deploy:
       labels:
         - traefik.port=5050
