@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  pgadmin:
+    image: englc/pgadmin4
+    ports:
+      - "5050:5050"
+    environment:
+      - DEFAULT_USER=${DEFAULT_USER:-pgadmin4@pgadmin.org}
+      - DEFAULT_PASSWORD=${DEFAULT_PASSWORD:-admin}
+    deploy:
+      labels:
+        - traefik.port=5050
+        - traefik.protocol=http
+        - traefik.docker.network=apps
+        - traefik.frontend.rule=Host:${TRAEFIK_HOST}
+
