@@ -977,7 +977,34 @@
       "url": "https://github.com/jmcarbo/templates",
       "stackfile": "stacks/syncthing/syncthing.yml"
     }
+  },
+  {
+    "type": "stack",
+    "title": "pgadmin",
+    "description": "Deploys pgadmin",
+    "categories": ["Database"],
+    "platform": "linux",
+    "repository": {
+      "url": "https://github.com/jmcarbo/templates",
+      "stackfile": "stacks/pgadmin/pgadmin.yml"
+    },
+    "env": [
+      {
+        "name": "DEFAULT_USER",
+        "label": "DEFAULT_USER",
+        "description": "DEFAULT_USER - pgadmin4@pgadmin.org"
+      },
+      {
+        "name": "DEFAULT_PASSWORD",
+        "label": "DEFAULT_PASSWORD",
+        "description": "DEFAULT_PASSWORD- admin"
+      },
+      {
+        "name": "TRAEFIK_HOST",
+        "label": "TRAEFIK_HOST",
+        "description": "TRAEFIK_HOST"
+      }
+
+    ]
   }
-
-
 ]
