@@ -53,7 +53,7 @@ services:
   kapacitor:
     # Full tag list: https://hub.docker.com/r/library/kapacitor/tags/
     image: kapacitor
-    entrypoint: /bin/bash -c 'echo "$$KAPACITOR_CONFIG" | tee /etc/kapacitor/kapacitor.conf && kapacitor'
+    entrypoint: /bin/bash -c 'echo "$$KAPACITOR_CONFIG" | tee /etc/kapacitor/kapacitor.conf && /entrypoint.sh kapacitord'
     deploy:
       replicas: 1
       placement:
